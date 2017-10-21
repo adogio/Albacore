@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/adogio/Albacore/issues"
   },
-  "homepage": "https://github.com/adogio/Albacore#readme"
+  "homepage": "https://github.com/adogio/Albacore#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.46"
+  }
 }
