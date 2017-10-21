@@ -1,0 +1,19 @@
+{
+  "name": "albacore",
+  "version": "0.0.1",
+  "description": "db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adogio/Albacore.git"
+  },
+  "author": "WMXPY",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/adogio/Albacore/issues"
+  },
+  "homepage": "https://github.com/adogio/Albacore#readme"
+}
