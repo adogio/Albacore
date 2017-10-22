@@ -6,9 +6,11 @@ class Albacore {
 
     private path: string;
     private link: Object;
+    private mode: string;
 
     public constructor(path) {
         this.path = path;
+        this.mode = "json";
         let DBexist: boolean = fs.existsSync(this.path);
         if (DBexist) {
             load(this);
@@ -16,6 +18,11 @@ class Albacore {
             init(this.path);
             load(this);
         }
+    }
+
+    public setMode(mode: string): Albacore {
+        this.mode = mode;
+        return this;
     }
 
     public addTable(name: string): Albacore {
@@ -34,18 +41,22 @@ class Albacore {
     public writeTable(name: string, content: any): Albacore {
         if (!this.link[name]) throw new Error("table not exist");
         let tablePath: string = this.path + "/" + name;
-        if (content instanceof Array || content instanceof Object) {
+        if (this.mode == "json") {
             content = JSON.stringify(content);
         }
         fs.writeFileSync(tablePath + "/chunk0", content);
         return this;
     }
 
-    public table(name: string, encode?: boolean): any {
+    public table(name: string): any {
         let content = fs.readFileSync(this.link[name].chunk[0], {
             encoding: "utf8",
         });
-        return encode ? JSON.parse(content) : content;
+        if (this.mode == "json") {
+            return JSON.parse(content)
+        } else {
+            return content;
+        }
     }
 
     public setLink(obj: Object): Albacore {
