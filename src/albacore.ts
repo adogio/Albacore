@@ -41,7 +41,7 @@ class Albacore {
     public writeTable(name: string, content: any): Albacore {
         if (!this.link[name]) throw new Error("table not exist");
         let tablePath: string = this.path + "/" + name;
-        if (this.mode == "json") {
+        if (this.mode === "json") {
             content = JSON.stringify(content);
         }
         fs.writeFileSync(tablePath + "/chunk0", content);
@@ -52,7 +52,7 @@ class Albacore {
         let content = fs.readFileSync(this.link[name].chunk[0], {
             encoding: "utf8",
         });
-        if (this.mode == "json") {
+        if (this.mode === "json") {
             return JSON.parse(content)
         } else {
             return content;
