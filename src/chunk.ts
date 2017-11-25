@@ -1,5 +1,10 @@
+
+interface albacoreChunkOptions {
+
+}
+
 class albacoreChunk {
-    public constructor() {
+    public constructor(options: albacoreChunkOptions) {
 
     }
 }

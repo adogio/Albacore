@@ -1,6 +1,11 @@
+
+interface albacoreTableOptions {
+
+}
+
 class albacoreTable {
 
-    public constructor(path: string) {
+    public constructor(options: albacoreTableOptions) {
 
     }
 
