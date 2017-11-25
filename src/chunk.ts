@@ -1,6 +1,6 @@
 
 interface albacoreChunkOptions {
-
+    mode: string
 }
 
 class albacoreChunk {

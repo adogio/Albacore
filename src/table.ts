@@ -1,6 +1,6 @@
 
 interface albacoreTableOptions {
-
+    mode: string
 }
 
 class albacoreTable {
